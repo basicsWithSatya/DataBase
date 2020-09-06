@@ -33,3 +33,62 @@ Drop schema [schemaName];
 ex:- Drop table student;
      Drop schema school;
 
+-- More with select
+
+create schema company;
+    
+use company;
+    
+create table user(id int,first_name varchar(50),last_name varchar(50),city varchar(50),salary double);
+
+insert into user values(1,'Satya','Gaur','Bangalore',50000);
+insert into user values(2,'Hussain','Khan','Bangalore',55000);
+insert into user values(3,'Jack','Adams','Newyork',40000);
+insert into user values(4,'Peter','Johnes','Newyork',40000);
+insert into user values(5,'Maya','Jacob','Boston',70000);
+
+-- DISTINCT
+SELECT distinct [columnName] from [tableName];
+
+ex:- select distinct salary from user;
+
+-- WHERE
+select */[column1,column2, ....] from [tableName] where [condition];
+
+ex:- select * from user where first_name = 'Maya';
+
+-- Conditional OPERATOR AND,OR,NOT
+
+-- OR
+select */[column1,column2, ....] from [tableName] where [condition1] or [condition2];
+
+ex:- select * from user where city = 'Bangalore' or city = 'Boston';
+
+-- AND
+
+select */[column1,column2, ....] from [tableName] where [condition1] AND [condition2];
+
+ex:- select * from user where city = 'Bangalore' and salary > 50000;
+
+-- NOT
+
+select */[column1,column2, ....] from [tableName] where not [condition];
+
+ex:- select * from user where not city = 'Bangalore';
+
+-- IN
+select */[column1,column2, ....] from [tableName] where [columnName] in (columnValue1,columnValue2,.....);
+
+ex:- select * from user where city in ('Bangalore','Boston');
+
+-- NOT In
+select */[column1,column2, ....] from [tableName] where [columnName] not in (columnValue1,columnValue2,.....);
+
+ex:- select * from user where city not in ('Bangalore','Boston');
+
+-- Order By
+	-- ascending
+select */[column1,column2, ....] from [tableName] order by [columnName] asc;
+	-- descending
+select */[column1,column2, ....] from [tableName] order by [columnName] desc;   
+ex:- select * from user order by salary desc;
