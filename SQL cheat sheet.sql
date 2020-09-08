@@ -92,3 +92,42 @@ select */[column1,column2, ....] from [tableName] order by [columnName] asc;
 	-- descending
 select */[column1,column2, ....] from [tableName] order by [columnName] desc;   
 ex:- select * from user order by salary desc;
+
+
+-- SQL Aggregate Functions | Min, Max, Count, Avg, Sum & Like
+
+-- Min
+select min(columnName) from [tableName];
+ex:- select min(salary) from user;
+
+-- MAX
+
+select max(columnName) from [tableName];
+ex:- select max(salary) from user;
+
+-- Count
+
+select count(*) from [tableName];
+ex:- select count(*) from user;
+	 select count(id) from user;
+
+-- Avg
+
+select avg(columnName) from [tableName];
+ex:- select avg(salary) from user;
+
+-- SUM
+
+select sum(columnName) from [tableName];
+ex:- select sum(salary) from user;
+
+-- LIKE
+
+select * from [tableName] where [columnName] like '%[value]%';
+ex:- select * from user where name like '%satya%';
+
+-- Second Max Query
+
+select max(salary) from user where salary < (select max(salary) from user);
+
+
